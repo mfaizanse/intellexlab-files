@@ -1,4 +1,5 @@
 CLIENT_DIR="/home/intellexlab/softether/vpnclient"
-NIC_NAME="net1"
-ACCOUNT_NAME="demo"
-VPN_HOST_IPv4="10.0.0.1"
+NIC_NAME="nic1"
+ACCOUNT_NAME="cactusvpn"
+VPN_HOST_IPv4="74.91.126.205"
+lOCAL_GATEWAY="192.168.0.1"

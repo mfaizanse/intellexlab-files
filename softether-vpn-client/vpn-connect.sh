@@ -20,19 +20,19 @@ sleep 5
 $CLIENT_DIR/vpncmd /CLIENT localhost /CMD AccountList
 
 # Refresh IP address info from VPN server
-sudo dhclient $NIC_NAME
+sudo dhclient vpn_$NIC_NAME
 
 sleep 2
 
 # Set IP routes for VPN
-sudo ip route add $VPN_HOST_IPv4/32 via 192.168.0.1
-sudo ip route del default via 192.168.0.1
+sudo ip route add $VPN_HOST_IPv4/32 via $lOCAL_GATEWAY
+sudo ip route del default via $lOCAL_GATEWAY
 sudo netstat -rn
 
 sleep 3
 
 # Refresh IP address info from VPN server
-sudo dhclient $NIC_NAME
+sudo dhclient vpn_$NIC_NAME
 
 # Check the VPN Account connection status
 $CLIENT_DIR/vpncmd /CLIENT localhost /CMD AccountList
