@@ -1,27 +1,38 @@
-sudo ~/softether/vpnclient/vpnclient stop
+# Load the configurations file
+source vpn_config
+
+# Stop the SoftEther client (if running)
+sudo $CLIENT_DIR/vpnclient stop
 
 sleep 2
 
-sudo ~/softether/vpnclient/vpnclient start
+# Start the SoftEther client
+sudo $CLIENT_DIR/vpnclient start
 
 sleep 3
 
-~/softether/vpnclient/vpncmd /CLIENT localhost /CMD AccountConnect dnde
+# Connect to the VPN server
+$CLIENT_DIR/vpncmd /CLIENT localhost /CMD AccountConnect $ACCOUNT_NAME
 
 sleep 5
 
-~/softether/vpnclient/vpncmd /CLIENT localhost /CMD AccountList
+# Check the VPN Account connection status
+$CLIENT_DIR/vpncmd /CLIENT localhost /CMD AccountList
 
-sudo dhclient vpn_vpn
+# Refresh IP address info from VPN server
+sudo dhclient $NIC_NAME
 
 sleep 2
 
-sudo ip route add x.x.x.x/32 via 192.168.0.1
+# Set IP routes for VPN
+sudo ip route add $VPN_HOST_IPv4/32 via 192.168.0.1
 sudo ip route del default via 192.168.0.1
 sudo netstat -rn
 
 sleep 3
 
-sudo dhclient vpn_vpn
+# Refresh IP address info from VPN server
+sudo dhclient $NIC_NAME
 
-~/softether/vpnclient/vpncmd /CLIENT localhost /CMD AccountList
+# Check the VPN Account connection status
+$CLIENT_DIR/vpncmd /CLIENT localhost /CMD AccountList

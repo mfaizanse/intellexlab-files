@@ -1,9 +1,15 @@
-~/softether/vpnclient/vpncmd /CLIENT localhost /CMD AccountDelete demo
+# Load the configurations file
+source vpn_config
+
+# Delete the VPN Account info
+$CLIENT_DIR/vpncmd /CLIENT localhost /CMD AccountDelete demo
 
 sleep 2
 
-~/softether/vpnclient/vpncmd /CLIENT localhost /CMD NicDelete vpn_vpn
+# Delete the virtual network interface
+$CLIENT_DIR/vpncmd /CLIENT localhost /CMD NicDelete vpn_vpn
 
 sleep 2
 
-sudo ~/softether/vpnclient/vpnclient stop
+# Stop the SoftEther client
+sudo $CLIENT_DIR/vpnclient stop
