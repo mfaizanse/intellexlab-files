@@ -1,0 +1,4 @@
+CLIENT_DIR="/home/intellexlab/softether/vpnclient"
+NIC_NAME="vpn_vpn"
+ACCOUNT_NAME="demo"
+VPN_HOST_IPv4="10.0.0.1"
