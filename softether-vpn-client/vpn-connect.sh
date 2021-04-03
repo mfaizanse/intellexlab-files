@@ -25,8 +25,8 @@ sudo dhclient vpn_$NIC_NAME
 sleep 2
 
 # Set IP routes for VPN
-sudo ip route add $VPN_HOST_IPv4/32 via $lOCAL_GATEWAY
-sudo ip route del default via $lOCAL_GATEWAY
+sudo ip route add $VPN_HOST_IPv4/32 via $LOCAL_GATEWAY
+sudo ip route del default via $LOCAL_GATEWAY
 sudo netstat -rn
 
 sleep 3
