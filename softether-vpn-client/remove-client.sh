@@ -12,12 +12,12 @@ sudo $CLIENT_DIR/vpnclient start
 sleep 3
 
 # Delete the VPN Account info
-$CLIENT_DIR/vpncmd /CLIENT localhost /CMD AccountDelete demo
+$CLIENT_DIR/vpncmd /CLIENT localhost /CMD AccountDelete $ACCOUNT_NAME
 
 sleep 2
 
 # Delete the virtual network interface
-$CLIENT_DIR/vpncmd /CLIENT localhost /CMD NicDelete vpn_vpn
+$CLIENT_DIR/vpncmd /CLIENT localhost /CMD NicDelete $NIC_NAME
 
 sleep 2
 
