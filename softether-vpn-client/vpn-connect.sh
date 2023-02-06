@@ -27,7 +27,7 @@ sleep 2
 # Set IP routes for VPN
 sudo ip route add $VPN_HOST_IPv4/32 via  $1
 sudo ip route del default via  $1
-sudo netstat -rn
+sudo ip route
 
 sleep 3
 
