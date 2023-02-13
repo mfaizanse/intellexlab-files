@@ -1,3 +1,6 @@
+#!/bin/bash
+cd /home/tvabuser/GitClone/TvabSE-connect/softether-vpn-client/
+
 # Load the configurations file
 source vpn_config
 
@@ -25,8 +28,8 @@ sudo dhclient vpn_$NIC_NAME
 sleep 2
 
 # Set IP routes for VPN
-sudo ip route add $VPN_HOST_IPv4/32 via  $1
-sudo ip route del default via  $1
+sudo ip route add $VPN_HOST_IPv4/32 via 192.168.0.1
+sudo ip route del default via 192.168.0.1
 sudo ip route
 
 sleep 3
