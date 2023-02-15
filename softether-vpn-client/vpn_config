@@ -1,4 +1,4 @@
-CLIENT_DIR="/home/tvabuser/software/vpnclient"
+CLIENT_DIR="/home/tvabuser/vpnclient"
 NIC_NAME="se"
 ACCOUNT_NAME="Tvab"
 VPN_HOST_IPv4="176.223.128.55"
